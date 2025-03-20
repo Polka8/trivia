@@ -16,7 +16,7 @@ def create_app():
     # Configurazione del database
     app.config['SQLALCHEMY_DATABASE_URI'] = os.getenv(
         "DATABASE_URL", 
-        "mysql+pymysql://root:password123@db/bavaros?charset=utf8mb4"
+        "mysql+pymysql://root:password123@db/trivia?charset=utf8mb4"
     )
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_ENGINE_OPTIONS'] = {

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.2
+-- version 5.2.2
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Creato il: Mar 20, 2025 alle 09:22
--- Versione del server: 5.7.24
--- Versione PHP: 8.3.1
+-- Host: db:3306
+-- Creato il: Mar 20, 2025 alle 11:40
+-- Versione del server: 8.4.4
+-- Versione PHP: 8.2.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,9 +28,9 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `domande` (
-  `ID_domanda` int(7) NOT NULL,
+  `ID_domanda` int NOT NULL,
   `descrizione` varchar(500) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
@@ -39,11 +39,11 @@ CREATE TABLE `domande` (
 --
 
 CREATE TABLE `punteggio` (
-  `ID_punteggio` int(7) NOT NULL,
-  `valore` int(11) NOT NULL,
+  `ID_punteggio` int NOT NULL,
+  `valore` int NOT NULL,
   `data_creazione` datetime NOT NULL,
   `email` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
@@ -52,11 +52,11 @@ CREATE TABLE `punteggio` (
 --
 
 CREATE TABLE `risposte` (
-  `ID_risposta` int(7) NOT NULL,
+  `ID_risposta` int NOT NULL,
   `descrizione` varchar(500) NOT NULL,
   `stato` enum('corretta','sbagliata') NOT NULL,
-  `id_domanda` int(7) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `id_domanda` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE `utente` (
   `cognome` varchar(50) NOT NULL,
   `ruolo` enum('admin','cliente') NOT NULL,
   `creato_il` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
 
 --
 -- Indici per le tabelle scaricate
@@ -102,6 +102,16 @@ ALTER TABLE `risposte`
 --
 ALTER TABLE `utente`
   ADD PRIMARY KEY (`email`);
+
+--
+-- AUTO_INCREMENT per le tabelle scaricate
+--
+
+--
+-- AUTO_INCREMENT per la tabella `punteggio`
+--
+ALTER TABLE `punteggio`
+  MODIFY `ID_punteggio` int NOT NULL AUTO_INCREMENT;
 
 --
 -- Limiti per le tabelle scaricate
