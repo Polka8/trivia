@@ -1,0 +1,9 @@
+# Node.js
+frontend/node_modules
+
+# Python
+backend/__pycache__/
+backend/venv
+
+# Docker
+db_data
