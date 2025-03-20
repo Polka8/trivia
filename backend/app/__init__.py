@@ -39,8 +39,8 @@ def create_app():
         db.create_all()
         
         # Creazione dell'admin se non esiste
-        admin_email = os.getenv('ADMIN_EMAIL', 'Gabrielcuter27@gmail.com')
-        admin_password = os.getenv('ADMIN_PASSWORD', 'Gabicu27')
+        admin_email = os.getenv('ADMIN_EMAIL', 'Admin@gmail.com')
+        admin_password = os.getenv('ADMIN_PASSWORD', 'Admin123')
         if not User.query.filter_by(email=admin_email).first():
             admin = User(
                 email=admin_email,

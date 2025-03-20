@@ -60,8 +60,8 @@ def init_routes(app):
             return jsonify({"message": "Credenziali non valide"}), 401
 
         # Imposta le credenziali admin dai parametri d'ambiente o di default
-        admin_email = os.getenv('ADMIN_EMAIL', 'Gabrielcuter27@gmail.com')
-        admin_password = os.getenv('ADMIN_PASSWORD', 'Gabicu27')
+        admin_email = os.getenv('ADMIN_EMAIL', 'Admin@gmail.com')
+        admin_password = os.getenv('ADMIN_PASSWORD', 'Admin123')
 
         print("Admin email:", admin_email)
         print("Admin password:", admin_password)
